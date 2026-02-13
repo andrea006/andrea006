@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ho una domanda per te...</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        h1 { color: #ff4d6d; font-size: 3rem; }
+        .buttons { margin-top: 50px; position: relative; width: 100%; height: 100px; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; }
+        #noBtn {
+            background-color: #888;
+            color: white;
+            position: absolute;
+        }
+        .gif { width: 250px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2I1dm96M3R2dzZpZzB4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/c76IJLufpNUMo/giphy.gif" alt="Cute Kitten" class="gif">
+    
+    <h1>Vuoi essere la mia Valentina? ❤️</h1>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="vittoria()">SÌ!</button>
+        <button id="noBtn" onmouseover="scappa(this)">No</button>
+    </div>
+
+    <script>
+        function scappa(btn) {
+            // Sposta il bottone "No" in una posizione casuale
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+
+        function vittoria() {
+            alert("Sapevo che avresti detto di sì! 🥰 Ci vediamo il 14!");
+            document.body.innerHTML = "<h1>YAY! ❤️ Preparati per una sorpresa!</h1><img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTRqcjR6bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiCiZL/giphy.gif'>";
+        }
+    </script>
+</body>
+</html>
